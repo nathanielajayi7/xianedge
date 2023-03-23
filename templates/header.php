@@ -129,7 +129,18 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
                     <div class="py-1 bg-white rounded-md shadow-xs">
-                      <a href="#"
+
+                    <?php
+                foreach($products as $p){
+
+                  echo '
+                  <a href="'."/{$p['slug']}".'"
+                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">'.$p['name'].'
+                </a>';
+
+                }
+                ?>
+                      <!-- <a href="#"
                         class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">
                         Pages-1
                       </a>
@@ -140,7 +151,7 @@
                       <a href="#"
                         class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">
                         Pages-3
-                      </a>
+                      </a> -->
                     </div>
                   </div>
                 </div>
@@ -182,7 +193,17 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
                     <div class="py-1 bg-white rounded-md shadow-xs">
-                      <a href="#"
+                    <?php
+                foreach($services as $p){
+
+                  echo '
+                  <a href="'."/services/{$p['slug']}".'"
+                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">'.$p['name'].'
+                </a>';
+
+                }
+                ?>
+                      <!-- <a href="#"
                         class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">
                         Users-1
                       </a>
@@ -193,7 +214,7 @@
                       <a href="#"
                         class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">
                         Users-3
-                      </a>
+                      </a> -->
                     </div>
                   </div>
                 </div>
@@ -293,21 +314,33 @@
               </button>
               <div x-show="open" @click.away="open = false" class="px-2 py-2 mt-2 bg-white rounded-md shadow-xs"
                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu" role="menuitem">
-                <a href="#"
+                <?php
+                foreach($products as $p){
+
+                  echo '
+                  <a href="'."/{$p['slug']}".'"
+                  class="flex flex-row items-center px-3 py-2 mt-1 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
+                  role="menuitem">
+                  '.$p['name'].'
+                </a>';
+
+                }
+                ?>
+                <!-- <a href="#"
                   class="flex flex-row items-center px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
                   role="menuitem">
                   Pages-1
-                </a>
-                <a href="#"
+                </a> -->
+                <!-- <a href="#"
                   class="flex flex-row items-center px-3 py-2 mt-1 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
                   role="menuitem">
                   Pages-2
-                </a>
-                <a href="#"
+                </a> -->
+                <!-- <a href="#"
                   class="flex flex-row items-center px-3 py-2 mt-1 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
                   role="menuitem">
                   Pages-3
-                </a>
+                </a> -->
               </div>
             </div>
             <a href="#"
@@ -341,7 +374,19 @@
               </button>
               <div x-show="open" @click.away="open = false" class="px-2 py-2 mt-2 bg-white rounded-md shadow-xs"
                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu" role="menuitem">
-                <a href="#"
+                  <?php
+                foreach($services as $p){
+
+                  echo '
+                  <a href="'."/services/{$p['slug']}".'"
+                  class="flex flex-row items-center px-3 py-2 mt-1 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
+                  role="menuitem">
+                  '.$p['name'].'
+                </a>';
+
+                }
+                ?>
+                <!-- <a href="#"
                   class="flex flex-row items-center px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
                   role="menuitem">
                   Users-1
@@ -355,7 +400,7 @@
                   class="flex flex-row items-center px-3 py-2 mt-1 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
                   role="menuitem">
                   Users-3
-                </a>
+                </a> -->
               </div>
             </div>
             <a href="#"

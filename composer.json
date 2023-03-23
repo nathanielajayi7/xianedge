@@ -1,0 +1,18 @@
+{
+    "name": "nath/xianedge",
+    "type": "project",
+    "require": {
+        "thingengineer/mysqli-database-class": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nath\\Xianedge\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nathanielajayi7",
+            "email": "nathanielajayi646@gmail.com"
+        }
+    ]
+}
