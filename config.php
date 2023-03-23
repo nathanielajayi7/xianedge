@@ -12,7 +12,7 @@ $db = initDb();
  */
 function isDebug(): bool
 {
-    return ($_SERVER['SERVER_NAME'] != 'xianedgeltd.com');
+    return ($_SERVER['SERVER_NAME'] != 'products.xianedgeltd.com');
 }
 function initDb(): MysqliDb
 {
