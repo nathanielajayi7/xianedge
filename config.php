@@ -12,8 +12,8 @@ $db = initDb();
  */
 function isDebug(): bool
 {
-    error_log('isDebug: ' . $_SERVER['SERVER_NAME']);
-    return strpos(strtolower($_SERVER['SERVER_NAME']), 'xianedgeltd') !== false;
+    // error_log('isDebug: ' . $_SERVER['SERVER_NAME']);
+    return strpos(strtolower($_SERVER['SERVER_NAME']), 'xianedgeltd') === false;
 }
 function initDb(): MysqliDb
 {
