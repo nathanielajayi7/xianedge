@@ -12,16 +12,15 @@ $db = initDb();
  */
 function isDebug(): bool
 {
-    return true;
-    // return ($_SERVER['SERVER_NAME'] != 'xianedgeltd.com');
+    return ($_SERVER['SERVER_NAME'] != 'xianedgeltd.com');
 }
 function initDb(): MysqliDb
 {
     // $SQL_PASSWORD = '%ocT$IlXxFS}';
-    $SQL_PASSWORD = '';
-    $SQL_USERNAME = 'root';
+    $SQL_PASSWORD = isDebug() ? '' : '%ocT$IlXxFS}';
+    $SQL_USERNAME = isDebug() ? 'root' : 'xianedge_user1';
     $SQL_HOST = 'localhost';
-    $SQL_DB = 'test';
+    $SQL_DB = isDebug() ? 'test' : 'xianedge_db';
 
     if (isDebug()) {
         return new MysqliDb('localhost', $SQL_USERNAME, $SQL_PASSWORD, $SQL_DB);
