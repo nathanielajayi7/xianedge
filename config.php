@@ -12,7 +12,7 @@ $db = initDb();
  */
 function isDebug(): bool
 {
-    return ($_SERVER['SERVER_NAME'] != 'products.xianedgeltd.com');
+    return str_contains(strtolower($_SERVER['SERVER_NAME']), 'xianedgeltd');
 }
 function initDb(): MysqliDb
 {
