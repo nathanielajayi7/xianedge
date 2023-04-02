@@ -2,6 +2,20 @@
 
 require_once __DIR__ . '/router.php';
 
+
+// if (isDebug())
+require 'config.php';
+
+// if (isDebug()) {
+//     // require("router.php");
+// }
+
+// $ROUTE = "/product/air-cargo";
+
+$products = $db->get('products');
+$services = $db->get('services');
+
+
 // ##################################################
 // ##################################################
 // ##################################################
