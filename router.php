@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+function isDebug(): bool
+{
+  // error_log('isDebug: ' . $_SERVER['SERVER_NAME']);
+  return strpos(strtolower($_SERVER['SERVER_NAME']), 'xianedgeltd') === false;
+}
+
 function get($route, $path_to_include)
 {
   // echo $route; 
@@ -53,7 +60,8 @@ function route($route, $path_to_include)
   }
   $request_url = filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL);
   $request_url = rtrim($request_url, '/');
-  $request_url = str_replace($request_url, '/routes.php', '');
+  if (isDebug())
+    $request_url = str_replace($request_url, '/routes.php', '');
   $request_url = strtok($request_url, '?');
   $route_parts = explode('/', $route);
   $request_url_parts = explode('/', $request_url);
@@ -118,16 +126,17 @@ function activeTab($tab)
 {
   $request_url = filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL);
   $request_url = rtrim($request_url, '/');
-  $request_url = str_replace($request_url, '/routes.php', '');
+  if (isDebug())
+    $request_url = str_replace($request_url, '/routes.php', '');
   $request_url = strtok($request_url, '?');
   $request_url_parts = explode('/', $request_url);
   array_shift($request_url_parts);
-  if($request_url_parts[0] == ''){
+  if ($request_url_parts[0] == '') {
     $request_url_parts[0] = 'home';
   }
   if ($request_url_parts[0] == $tab) {
     echo ' text-white bg-gray-900';
-  }else{
+  } else {
     echo ' text-gray-300 hover:text-white hover:bg-gray-700';
   }
 

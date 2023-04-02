@@ -2,25 +2,25 @@
 
 require 'config.php';
 
-if (isDebug()) {
-    // require("router.php");
-}
+// if (isDebug()) {
+//     // require("router.php");
+// }
 
-$ROUTE = "/product/air-cargo";
+// $ROUTE = "/product/air-cargo";
 
 
-$products = $db->get('products');
-$services = $db->get('services');
+// $products = $db->get('products');
+// $services = $db->get('services');
 
-if (!empty($ROUTE)) {
-    include 'templates/header.php';
-    // echo $ROUTE;
-    $product = $db->where('slug', 'air-cargo')->getOne('products');
-    // var_dump($product);
-    include 'templates/product.php';
-    include 'templates/contact_us.php';
-    die();
-}
+// if (!empty($ROUTE)) {
+//     include 'templates/header.php';
+//     // echo $ROUTE;
+//     $product = $db->where('slug', 'air-cargo')->getOne('products');
+//     // var_dump($product);
+//     include 'templates/product.php';
+//     include 'templates/contact_us.php';
+//     die();
+// }
 
 
 // $mysqli = new mysqli("localhost", "root", "", "test");
