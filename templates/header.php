@@ -4,22 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="<?php
-echo __DIR__;
-?>/scripts/tailwinds.js"></script>
+  <script src="<?php echo "https://" . $_SERVER['SERVER_NAME'] ?>/scripts/tailwinds.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="<?php
-echo __DIR__;
-?>/css/custom.css">
+  <link rel="stylesheet" href="<?php echo "https://" . $_SERVER['SERVER_NAME'] ?>/css/custom.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="<?php
-echo __DIR__;
-?>/scripts/config.tailwinds.js"></script>
+  <script src="<?php echo "https://" . $_SERVER['SERVER_NAME'] ?>/scripts/config.tailwinds.js"></script>
 
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>
 
