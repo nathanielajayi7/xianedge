@@ -9,12 +9,12 @@ $db = initDb();
  * Summary of isDebug
  * Checks if the app is in debug mode or live environment
  * @return bool
- */
-function isDebug(): bool
-{
-    // error_log('isDebug: ' . $_SERVER['SERVER_NAME']);
-    return strpos(strtolower($_SERVER['SERVER_NAME']), 'xianedgeltd') === false;
-}
+//  */
+// function isDebug(): bool
+// {
+//     // error_log('isDebug: ' . $_SERVER['SERVER_NAME']);
+//     return strpos(strtolower($_SERVER['SERVER_NAME']), 'xianedgeltd') === false;
+// }
 function initDb(): MysqliDb
 {
     // $SQL_PASSWORD = '%ocT$IlXxFS}';

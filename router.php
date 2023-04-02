@@ -52,7 +52,7 @@ function route($route, $path_to_include)
       $path_to_include .= '.php';
     }
   } else {
-    echo "error";
+    // echo "error";
   }
   if ($route == "/404") {
     include_once __DIR__ . "/$path_to_include";
