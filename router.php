@@ -65,8 +65,8 @@ function route($route, $path_to_include)
   $request_url = strtok($request_url, '?');
   $route_parts = explode('/', $route);
   $request_url_parts = explode('/', $request_url);
-  print_r($request_url_parts);
-  var_dump($request_url);
+  // print_r($request_url_parts);
+  // var_dump($request_url);
   array_shift($route_parts);
   array_shift($request_url_parts);
   if ($route_parts[0] == '' && count($request_url_parts) == 0) {
