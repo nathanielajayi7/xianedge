@@ -1,5 +1,8 @@
 <!doctype html>
 <html>
+<?php
+echo __DIR__;
+?>
 
 <head>
   <meta charset="UTF-8">
