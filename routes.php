@@ -1,6 +1,13 @@
 <?php
 
-require_once __DIR__.'/router.php';
+require_once __DIR__ . '/router.php';
+
+if (
+  !isDebug()
+) {
+  require 'config.php';
+}
+
 
 // ##################################################
 // ##################################################
@@ -10,7 +17,7 @@ require_once __DIR__.'/router.php';
 // In the URL -> http://localhost
 // The output -> Index
 get('/', 'index.php');
-get('/product/$product', function($product){
+get('/product/$product', function ($product) {
   echo $product;
 });
 // echo "hello";
@@ -35,21 +42,21 @@ get('/product/$product', function($product){
 
 // A route with a callback
 // get('/callback', function(){
-  // echo 'Callback executed';
+// echo 'Callback executed';
 // });
 
 // A route with a callback passing a variable
 // To run this route, in the browser type:
 // http://localhost/user/A
 // get('/callback/$name', function($name){
-  // echo "Callback executed. The name is $name";
+// echo "Callback executed. The name is $name";
 // });
 
 // A route with a callback passing 2 variables
 // To run this route, in the browser type:
 // http://localhost/callback/A/B
 // get('/callback/$name/$last_name', function($name, $last_name){
-  // echo "Callback executed. The full name is $name $last_name";
+// echo "Callback executed. The full name is $name $last_name";
 // });
 
 // ##################################################
@@ -60,4 +67,4 @@ get('/product/$product', function($product){
 // For GET or POST
 // The 404.php which is inside the views folder will be called
 // The 404.php has access to $_GET and $_POST
-any('/404','src/views/404.php');
+any('/404', 'src/views/404.php');

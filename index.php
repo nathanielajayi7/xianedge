@@ -1,6 +1,7 @@
 <?php
 
-require 'config.php';
+if (isDebug())
+    require 'config.php';
 
 // if (isDebug()) {
 //     // require("router.php");
@@ -9,8 +10,8 @@ require 'config.php';
 // $ROUTE = "/product/air-cargo";
 
 
-// $products = $db->get('products');
-// $services = $db->get('services');
+$products = $db->get('products');
+$services = $db->get('services');
 
 // if (!empty($ROUTE)) {
 //     include 'templates/header.php';
