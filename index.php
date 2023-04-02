@@ -10,6 +10,7 @@ require 'config.php';
 // $ROUTE = "/product/air-cargo";
 
 $products = $db->get('products');
+
 $services = $db->get('services');
 
 // if (!empty($ROUTE)) {

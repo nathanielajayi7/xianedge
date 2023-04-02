@@ -20,7 +20,7 @@ get('/product/$product', function ($product) {
 
   include 'templates/header.php';
   //     // echo $ROUTE;
-  $product = $db->where('slug', 'air-cargo')->getOne('products');
+  $product = $db->where('slug', $product)->getOne('products');
   //     // var_dump($product);
   include 'templates/product.php';
   include 'templates/contact_us.php';
