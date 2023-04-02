@@ -3,19 +3,6 @@
 require_once __DIR__ . '/router.php';
 
 
-// if (isDebug())
-require 'config.php';
-
-// if (isDebug()) {
-//     // require("router.php");
-// }
-
-// $ROUTE = "/product/air-cargo";
-
-$products = $db->get('products');
-$services = $db->get('services');
-
-
 // ##################################################
 // ##################################################
 // ##################################################
@@ -25,6 +12,12 @@ $services = $db->get('services');
 // The output -> Index
 get('/', 'index.php');
 get('/product/$product', function ($product) {
+
+  require 'config.php';
+
+  $products = $db->get('products');
+  $services = $db->get('services');
+
   include 'templates/header.php';
   //     // echo $ROUTE;
   $product = $db->where('slug', 'air-cargo')->getOne('products');
