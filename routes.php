@@ -11,7 +11,13 @@ require_once __DIR__ . '/router.php';
 // The output -> Index
 get('/', 'index.php');
 get('/product/$product', function ($product) {
-  echo $product;
+  include 'templates/header.php';
+  //     // echo $ROUTE;
+  $product = $db->where('slug', 'air-cargo')->getOne('products');
+  //     // var_dump($product);
+  include 'templates/product.php';
+  include 'templates/contact_us.php';
+  //     die();
 });
 // echo "hello";
 
