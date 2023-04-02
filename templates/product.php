@@ -2,7 +2,7 @@
 
     <div class="container mx-auto p-4">
 
-        <img class="h-96 rounded-md w-full object-cover my-2" src="<?php echo $product['image']; ?>"
+        <img class="h-96 rounded-md w-full object-cover my-2" src="<?php echo "https://" . $_SERVER['SERVER_NAME'] . "/"?><?php echo $product['image']; ?>"
             alt="Product Demo Image">
 
 
