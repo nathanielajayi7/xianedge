@@ -145,7 +145,7 @@
                       foreach ($products as $p) {
 
                         echo '
-                  <a href="' . "/products/{$p['slug']}" . '"
+                  <a href="' . "/product/{$p['slug']}" . '"
                   class="flex flex-row items-center px-4 py-2 text-sm focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">' . $p['name'] . '
                 </a>';
 
