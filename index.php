@@ -1,9 +1,29 @@
 <?php
 
 require 'config.php';
-// $mysqli = new mysqli("localhost", "root", "", "test");
+
+if (isDebug()) {
+    // require("router.php");
+}
+
+$ROUTE = "/product/air-cargo";
+
+
 $products = $db->get('products');
 $services = $db->get('services');
+
+if (!empty($ROUTE)) {
+    include 'templates/header.php';
+    // echo $ROUTE;
+    $product = $db->where('slug', 'air-cargo')->getOne('products');
+    // var_dump($product);
+    include 'templates/product.php';
+    include 'templates/contact_us.php';
+    die();
+}
+
+
+// $mysqli = new mysqli("localhost", "root", "", "test");
 
 // print_r($products);
 

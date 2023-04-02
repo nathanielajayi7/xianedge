@@ -22,6 +22,17 @@
       font-family: 'Inter', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+
+    }
+
+    .fa-solid,
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900;
+    }
+
     .feature-box {
       transition: background-color 0.3s;
       position: relative;
@@ -86,7 +97,7 @@
             <div class="hidden lg:block">
               <div class="flex items-center">
                 <a href="#"
-                  class="flex flex-row items-center px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md focus:outline-none focus:text-white focus:bg-gray-700">
+                  class="flex flex-row items-center px-3 py-2 text-sm font-medium  <?php echo activeTab("home"); ?> rounded-md focus:outline-none focus:text-white focus:bg-gray-700">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-home">
@@ -96,7 +107,7 @@
                   <span class="ml-2">Home</span>
                 </a>
                 <a href="#"
-                  class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+                  class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium <?php echo activeTab("about-us"); ?>  rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-file">
@@ -107,7 +118,7 @@
                 </a>
                 <div class="relative" x-data="{ open: false}">
                   <button @click="open = !open"
-                    class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+                    class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium <?php echo activeTab("products"); ?>  rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                       class="feather feather-folder">
@@ -130,16 +141,16 @@
                     class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
                     <div class="py-1 bg-white rounded-md shadow-xs">
 
-                    <?php
-                foreach($products as $p){
+                      <?php
+                      foreach ($products as $p) {
 
-                  echo '
-                  <a href="'."/{$p['slug']}".'"
-                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">'.$p['name'].'
+                        echo '
+                  <a href="' . "/products/{$p['slug']}" . '"
+                  class="flex flex-row items-center px-4 py-2 text-sm focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">' . $p['name'] . '
                 </a>';
 
-                }
-                ?>
+                      }
+                      ?>
                       <!-- <a href="#"
                         class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">
                         Pages-1
@@ -156,7 +167,7 @@
                   </div>
                 </div>
                 <a href="#"
-                  class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+                  class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium <?php echo activeTab("questions-and-answers"); ?>  rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-message-circle">
@@ -168,7 +179,7 @@
                 </a>
                 <div class="relative" x-data="{ open: false}">
                   <button @click="open = !open"
-                    class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+                    class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium text-gray-300 <?php echo activeTab("services"); ?>  rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                       class="feather feather-users">
@@ -193,16 +204,16 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
                     <div class="py-1 bg-white rounded-md shadow-xs">
-                    <?php
-                foreach($services as $p){
+                      <?php
+                      foreach ($services as $p) {
 
-                  echo '
-                  <a href="'."/services/{$p['slug']}".'"
-                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">'.$p['name'].'
+                        echo '
+                  <a href="' . "/services/{$p['slug']}" . '"
+                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">' . $p['name'] . '
                 </a>';
 
-                }
-                ?>
+                      }
+                      ?>
                       <!-- <a href="#"
                         class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">
                         Users-1
@@ -218,7 +229,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="#"
+                <a href="#contact"
                   class="flex flex-row items-center px-3 py-2 ml-4 text-sm font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -315,13 +326,13 @@
               <div x-show="open" @click.away="open = false" class="px-2 py-2 mt-2 bg-white rounded-md shadow-xs"
                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu" role="menuitem">
                 <?php
-                foreach($products as $p){
+                foreach ($products as $p) {
 
                   echo '
-                  <a href="'."/{$p['slug']}".'"
+                  <a href="' . "/{$p['slug']}" . '"
                   class="flex flex-row items-center px-3 py-2 mt-1 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
                   role="menuitem">
-                  '.$p['name'].'
+                  ' . $p['name'] . '
                 </a>';
 
                 }
@@ -374,14 +385,14 @@
               </button>
               <div x-show="open" @click.away="open = false" class="px-2 py-2 mt-2 bg-white rounded-md shadow-xs"
                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu" role="menuitem">
-                  <?php
-                foreach($services as $p){
+                <?php
+                foreach ($services as $p) {
 
                   echo '
-                  <a href="'."/services/{$p['slug']}".'"
+                  <a href="' . "/services/{$p['slug']}" . '"
                   class="flex flex-row items-center px-3 py-2 mt-1 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
                   role="menuitem">
-                  '.$p['name'].'
+                  ' . $p['name'] . '
                 </a>';
 
                 }
