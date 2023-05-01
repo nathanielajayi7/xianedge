@@ -329,7 +329,7 @@
                 foreach ($products as $p) {
 
                   echo '
-                  <a href="' . "/{$p['slug']}" . '"
+                  <a href="' . "/product/{$p['slug']}" . '"
                   class="flex flex-row items-center px-3 py-2 mt-1 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-200 focus:outline-none focus:text-gray-900 focus:bg-gray-200"
                   role="menuitem">
                   ' . $p['name'] . '
