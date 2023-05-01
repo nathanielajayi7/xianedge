@@ -46,7 +46,7 @@ $solutions = [
         <p class="text-gray-500 text-xl dark:text-gray-400">
             <span class="text-black">Rapiscan Systems' Security Screening Equipment
                 Fire Fighting & Security Screening Vehicles</span><br><br>
-            HAB International, based in Johannesburg, is the exclusive distributor of the industry leading Rapiscan
+            XianEdge LTD, is the exclusive distributor of the industry leading Rapiscan
             Security Screening Systems within Southern Africa.
 
             We specialise in installing and supporting the full range of airport security, customs & border security,
@@ -66,7 +66,7 @@ $solutions = [
         <!-- <p class="text-gray-500 text-xl dark:text-gray-400">
             <span class="text-black">Rapiscan Systems' Security Screening Equipment
                 Fire Fighting & Security Screening Vehicles</span><br><br>
-            HAB International, based in Johannesburg, is the exclusive distributor of the industry leading Rapiscan
+            XianEdge LTD,s the exclusive distributor of the industry leading Rapiscan
             Security Screening Systems within Southern Africa.
 
             We specialise in installing and supporting the full range of airport security, customs & border security,
